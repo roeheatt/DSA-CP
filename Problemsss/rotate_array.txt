@@ -1,0 +1,14 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int size = nums.size();
+        
+        k = k % size;
+        //For reversing the array upto kth position...
+        reverse(nums.begin(), nums.begin()+(nums.size()-k));
+        //For reversing the from the kth position till the end...
+        reverse(nums.begin()+(nums.size()-k), nums.end());
+        //Lastly, for reversing the whole array...
+        reverse(nums.begin(), nums.end());
+    }
+};
