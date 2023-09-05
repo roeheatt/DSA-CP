@@ -1,0 +1,13 @@
+bool checkArmstrong(int n){
+	//Write your code here\
+
+	int temp = n;
+	int p = 0;
+	int count = log10(n)+1;   // To count the number of digits in the number...
+	while(n){
+		int x = n%10;
+		p += pow(x, count);
+		n /= 10;
+	}
+	return(temp == p);
+}
