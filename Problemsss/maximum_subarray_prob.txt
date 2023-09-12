@@ -1,0 +1,13 @@
+lass Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int sum = 0;
+        int max_i = INT_MIN;
+        for(auto it:nums){
+            sum += it;
+            max_i = max(sum, max_i);
+            if(sum < 0) sum = 0;
+        }
+        return max_i;
+    }
+};
