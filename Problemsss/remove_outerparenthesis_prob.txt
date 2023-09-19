@@ -1,0 +1,22 @@
+class Solution {
+public:
+    string removeOuterParentheses(string s) {
+    //  (()()) (())
+    //  121210 1210                    
+
+        int ctr = 0;
+        string res = "";
+
+        for(char x : s){
+            switch(x){
+                case '(':
+                if(ctr++ > 0) res += x;
+                break;
+                case ')':
+                if(ctr-- > 1) res += x;
+                break;
+            }
+        }
+    return res;
+    }
+};
